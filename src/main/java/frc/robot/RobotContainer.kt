@@ -25,7 +25,7 @@ import frc.robot.commands.UpCommand
 object RobotContainer
 {
     private val driverController = CommandXboxController(OperatorConstants.DRIVER_CONTROLLER_PORT)
-    private val joystickController = CommandJoystick(0)
+    val joystickController = CommandJoystick(0)
 
     init
     {

@@ -20,5 +20,6 @@ class UpCommand : Command() {
     }
 
     override fun end(Interrupted: Boolean) {
+        PIDSubsystem.leftMotor.set(0.0);
     }
 }
