@@ -15,7 +15,8 @@ object PIDSubsystem : SubsystemBase() {
     init{
         leftMotor.encoder.setPositionConversionFactor(16.0/1.0)
         val driveTab: ShuffleboardTab = Shuffleboard.getTab("Drive Subsystem")
-        driveTab.addNumber("Motor Velocity",) {return@addNumber leftMotor.encoder.velocity}
+        driveTab.addNumber("Motor Velocity",) {return@addNumber leftMotor.encoder.velocity }
+
         val pid = leftMotor.pidController
 
         pid.p = kP

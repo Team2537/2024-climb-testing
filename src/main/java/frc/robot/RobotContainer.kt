@@ -1,11 +1,15 @@
 package frc.robot
 
+import edu.wpi.first.wpilibj.counter.UpDownCounter
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController
 import edu.wpi.first.wpilibj2.command.button.Trigger
 import frc.robot.Constants.OperatorConstants
 import frc.robot.commands.Autos
 import frc.robot.commands.ExampleCommand
 import frc.robot.subsystems.ExampleSubsystem
+import edu.wpi.first.wpilibj2.command.button.CommandJoystick
+import frc.robot.commands.PidDownCommand
+import frc.robot.commands.UpCommand
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -21,7 +25,7 @@ import frc.robot.subsystems.ExampleSubsystem
 object RobotContainer
 {
     private val driverController = CommandXboxController(OperatorConstants.DRIVER_CONTROLLER_PORT)
-
+    private val joystickController = CommandJoystick(0)
 
     init
     {
@@ -47,5 +51,7 @@ object RobotContainer
         // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
         // cancelling on release.
         driverController.b().whileTrue(ExampleSubsystem.exampleMethodCommand())
+        joystickController.button(6).whileTrue(UpCommand())
+        joystickController.button(4).whileTrue(PidDownCommand())
     }
 }

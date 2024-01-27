@@ -7,7 +7,7 @@ import kotlin.math.abs
 
 class PidDownCommand: Command() {
     override fun initialize() {
-        PIDSubsystem.leftMotor.set(-.5)
+        PIDSubsystem.leftMotor.set(-.4)
         //PIDSubsystem.leftMotor.pidController.setReference(0.0, CANSparkBase.ControlType.kVelocity)
     }
 
