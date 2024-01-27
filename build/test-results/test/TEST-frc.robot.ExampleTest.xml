@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="frc.robot.ExampleTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-23T23:49:54" hostname="Josies-MacBook-Air.local" time="0.028">
-  <properties/>
-  <testcase name="2 plus 2 should equal 4()" classname="frc.robot.ExampleTest" time="0.028"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
