@@ -9,10 +9,12 @@ import kotlin.math.abs
 class PidDownCommand: Command() {
     override fun initialize() {
         //PIDSubsystem.leftMotor.pidController.setReference(0.0, CANSparkBase.ControlType.kVelocity)
+        //PIDSubsystem.rightMotor.pidController.setReference(0.0, CANSparkBase.ControlType.kVelocity)
     }
 
     override fun execute() {
         PIDSubsystem.leftMotor.set((RobotContainer.joystickController.getRawAxis(3) - 1)/2)
+        PIDSubsystem.rightMotor.set((RobotContainer.joystickController.getRawAxis(3)-1)/2)
     }
 
     override fun isFinished(): Boolean {
@@ -21,5 +23,6 @@ class PidDownCommand: Command() {
 
     override fun end(Interrupted: Boolean) {
         PIDSubsystem.leftMotor.set(0.0);
+        PIDSubsystem.rightMotor.set(0.0);
     }
 }
